@@ -1,0 +1,35 @@
+## install the jupyterlab by using the conda
+
+## 确认python3 的版本
+python3 --version  # 应显示3.11.8
+pip3 --version     # 检查pip是否属于3.11.8环境
+
+## 若发现pip关联旧版本Python，需强制指定Python 3.11.8的路径安装
+/Library/Frameworks/Python.framework/Versions/3.11/bin/python3 -m pip install --upgrade jupyterlab
+
+## 安装Node.js（必需依赖）​​
+JupyterLab资源构建需要Node.js 14+环境：
+brew install node  # 通过Homebrew安装最新版
+node --version     # 验证是否≥14.x
+
+## 执行构建命令
+### 在 python 3.11.8 环境下​
+jupyter lab build
+
+## ​强制清理缓存
+jupyter lab clean
+rm -rf ~/.jupyter/cache
+
+## 重建资源配置
+jupyter lab --app-dir=/Users/你的用户名/.jupyter/lab
+
+## 过虚拟环境安装（推荐）​​
+## 使用虚拟环境可完全避免全局路径的权限问题：
+conda create -n jupyter_env python=3.11  # 创建独立环境
+conda activate jupyter_env             # 激活环境
+
+## 在虚拟环境中安装JupyterLab
+conda install -c conda-forge jupyterlab
+
+## 启动 jupyter lab
+# jupyter lab --allow-root
