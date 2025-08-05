@@ -1,0 +1,3 @@
+## 安装modelscope
+conda create -n modelscope_env python=3.11 # 尽量使用3.10及以上版本的Python
+conda activate modelscope_env
