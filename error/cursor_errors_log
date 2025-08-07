@@ -1,0 +1,5 @@
+### 1 cursor中一直报错No module named "pandas", 使用pip install pandas之后也报这个错误
+# 经过AI 查询之后发现是Python解释器版本选错了，
+# cursor “cmd + shift + p”, 选择 conda环境下的python解释器：‘/Users/carlos/miniconda3/bin/python’
+# 重新设置后无错误
+
