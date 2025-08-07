@@ -2,4 +2,4 @@
 # 经过AI 查询之后发现是Python解释器版本选错了，
 # cursor “cmd + shift + p”, 选择 conda环境下的python解释器：‘/Users/carlos/miniconda3/bin/python’
 # 重新设置后无错误
-
+# python解释器选择操作见 "PYTHON 解释器选择"文件夹
