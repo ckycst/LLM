@@ -2,6 +2,8 @@
 # 据说Apple Silicon 架构对 Faiss-CPU 有显著性能优势，那么让我们来试试吧！！！
 
 # 安装 Miniforge（专为 Apple Silicon 优化的 Conda 发行版）
+## 安装Homebrew 
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 brew install miniforge
 
 ## 确认是否安装了miniforge
