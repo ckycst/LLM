@@ -35,8 +35,13 @@ conda activate faiss
 python3 -c "import faiss; print('✅ Faiss imported successfully!')"
 ## 3. 版本及路径验证
 python3 ahum_faiss_ver&path.py
-## 4. 检查是否使用多线程（M1 多核加速标志）
+## 4. 验证是否原生，结果中有 arm64 说明是原生
+(faiss) carlos@anonymous faiss % lipo -info /Users/carlos/miniconda3/envs/faiss/lib/python3.11/site-packages/faiss/_swigfaiss.so
+Non-fat file: _swigfaiss.so is architecture: arm64
+### /Users/carlos/miniconda3/envs/faiss/lib/python3.11/site-packages/faiss 是我的faiss 环境目录
+
+## 5. 检查是否使用多线程（M1 多核加速标志）
 python3 ahum_faiss_test.py
-## 5. 检查faiss-cpu on Mac M1 上的性能
+## 6. 检查faiss-cpu on Mac M1 上的性能
 python3 ahum_faiss_test2.py
 
