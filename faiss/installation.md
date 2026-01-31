@@ -31,7 +31,7 @@ conda install -c conda-forge faiss-cpu
 # 安装完了之后验证
 ## 1. 激活faiss
 conda activate faiss
-## 2. 启动导入命令
+## 2. 启动导入命令,验证是否能导入
 python3 -c "import faiss; print('✅ Faiss imported successfully!')"
 ## 3. 版本及路径验证
 python3 ahum_faiss_ver&path.py
@@ -43,5 +43,17 @@ Non-fat file: _swigfaiss.so is architecture: arm64
 ## 5. 检查是否使用多线程（M1 多核加速标志）
 python3 ahum_faiss_test.py
 ## 6. 检查faiss-cpu on Mac M1 上的性能
+### M1 16GB 预期：
+### 时间：约 0.5 ～ 1.5 秒
+### 内存占用：约 300MB（10万×768×4字节）
+### 如果在这个范围，说明 Faiss 正在高效利用 M1 的 CPU 和内存带宽！
 python3 ahum_faiss_test2.py
+### 实际的结果
+### ✅ Searched 100 queries over 100,000 vectors (768D) in 0.09 seconds
+### ✅ Searched 100 queries over 100,000 vectors (768D) in 0.03 seconds
+### ✅ Searched 100 queries over 100,000 vectors (768D) in 0.03 seconds
+### ✅ Searched 100 queries over 100,000 vectors (768D) in 0.03 seconds
+### ✅ Searched 100 queries over 100,000 vectors (768D) in 0.03 seconds
+### ✅ Searched 100 queries over 100,000 vectors (768D) in 0.03 seconds
+### 连续 6 次，其中第一次相对时间长一点，为 0.09 秒，其他 5 次都是 0.03 秒
 
