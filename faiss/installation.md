@@ -35,4 +35,8 @@ conda activate faiss
 python3 -c "import faiss; print('✅ Faiss imported successfully!')"
 ## 3. 版本及路径验证
 python3 ahum_faiss_ver&path.py
+## 4. 检查是否使用多线程（M1 多核加速标志）
+python3 ahum_faiss_test.py
+## 5. 检查faiss-cpu on Mac M1 上的性能
+python3 ahum_faiss_test2.py
 
